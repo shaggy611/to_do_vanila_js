@@ -269,8 +269,14 @@ textarea {
 
 
 
+.body_gradient {
+		background: #DE6262;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #FFB88C, #DE6262);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
 .dotted {
+	position: relative;
   /*padding: 2.25em 1.6875em;*/
   background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
   background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
@@ -279,10 +285,41 @@ textarea {
   -webkit-background-size: 3px 3px;
   -moz-background-size: 3px 3px;
   background-size: 3px 3px;
-
-  width:100%;
   height: 100vh;
+
 }
 
 
 
+
+
+
+.note_name {
+	text-align: center;
+	font-size: 1.5rem;
+	width: 100%;
+}
+
+.chbx_style{
+	margin-left: 3%;
+	font-size: 1.25rem;
+}
+
+.button_group {
+	text-align: center;
+}
+
+.name_without_border {
+ border: 0px solid;
+}
+
+.name_without_border:focus {
+	border: 0px solid;
+	outline: none;
+
+}
+
+
+input.note_list_item {
+	width: 100%;
+}
