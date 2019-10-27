@@ -323,3 +323,13 @@ background: linear-gradient(to left, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Fi
 input.note_list_item {
 	width: 100%;
 }
+
+.col_padd_down {
+	padding-top: 2rem !important;
+
+}
+
+.notes_center {
+	align-content: center;
+
+}
