@@ -330,6 +330,12 @@ input.note_list_item {
 }
 
 .notes_center {
-	align-content: center;
+	margin-left: 1%;
+    margin-right: 1%;
 
+}
+
+.add_button {
+    margin-top: 2%;
+    margin-left: 2%;
 }

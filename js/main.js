@@ -23,8 +23,11 @@ $(document).ready(function(){
 
 
 
-
-
-
+let note_block = $.get('./note.html', function(note_data){
+    return note_data;
+});
+    $('.add_new_note').click(function(){
+        $('.insert_new_note').append(note_block.responseText);
+    });
 
 });
