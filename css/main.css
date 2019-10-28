@@ -1,16 +1,3 @@
-/*! HTML5 Boilerplate v7.2.0 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
 html {
   color: #222;
   font-size: 1em;
@@ -273,7 +260,7 @@ textarea {
 		background: #DE6262;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #FFB88C, #DE6262);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+font-family: 'Quicksand', sans-serif;
 }
 .dotted {
 	position: relative;
@@ -311,6 +298,7 @@ background: linear-gradient(to left, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Fi
 
 .name_without_border {
  border: 0px solid;
+	color: rgb(87, 87, 87);
 }
 
 .name_without_border:focus {
@@ -321,7 +309,7 @@ background: linear-gradient(to left, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Fi
 
 
 input.note_list_item {
-	width: 100%;
+	width: 100% !important;
 }
 
 .col_padd_down {
@@ -338,4 +326,29 @@ input.note_list_item {
 .add_button {
     margin-top: 2%;
     margin-left: 2%;
+}
+
+.insert_new_note {
+	color: rgb(87, 87, 87);
+}
+
+.add_new_note {
+	background-color: #DE6262 !important;
+}
+
+.add_new_note:hover {
+	background-color: #c43535 !important;
+}
+
+.sign_up {
+	background-color: #ff9f64 !important;
+}
+
+.sign_up:hover {
+	background-color: #fa843b !important;
+}
+
+.input_width {
+	/*border: 1px solid red;*/
+	width: 100%;
 }
