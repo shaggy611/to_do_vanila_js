@@ -11,8 +11,14 @@ let note_block = $.get('./note.html', function(note_data){
 
 
 
+    
+    
+    
+    
+    
+    
 
-
+     
 	$('.note_list_item').keypress(function(event){
 		if(event.keyCode == 13){
 			let note_list_item = $('.note_list_item').val();
@@ -21,6 +27,30 @@ let note_block = $.get('./note.html', function(note_data){
 		};
 	});
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	$('.clear').click(function(){
 		$('.note_list_item_field').empty();
 	});
