@@ -352,3 +352,8 @@ input.note_list_item {
 	/*border: 1px solid red;*/
 	width: 100%;
 }
+
+.divider_own {
+	border: 0.4px solid !important;
+	color: lightgray !important;
+}
