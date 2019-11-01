@@ -68,12 +68,41 @@ let note_block = $.get('./note.html', function(note_data){
     
     
     
-    let addClickListenHere = $('.addClickListenHere');
+    let addClickListenHere = document.querySelector('#addClickListenHere');
 	let note_list_item_listen = addClickListenHere.addEventListener('click', editCurrentElem);
-	function editCurrentElem(event) {
+	function editCurrentElem() {
 		let which_elem_user_click = event.target;
-		which_elem_user_click.addClass('note_list_item_js');
+        
+        if (which_elem_user_click.tagName == "INPUT") {
+            which_elem_user_click.className = "note_list_item note_list_item_js";
+            
+        } else return;
+        
+		
+        
+        
+        
+         $('.note_list_item_js').keypress(function(event){
+		if(event.keyCode == 13){
+			let note_list_item_js = $('.note_list_item_js').val();
+			$('.note_list_item_field_js').append('<div class="item checkbox"><input type="checkbox" tabindex="0"><label class="chbx_style">' + note_list_item_js + '</label></div>');
+			$('.note_list_item_js').val('');
+		};
+	});
+
+   
+	$('.clear').click(function(){
+		$('.note_list_item_field_js').empty();
+	});
 	};
+    
+    document.addEventListener('click', remove_class_name_for_elem);
+    
+    function remove_class_name_for_elem (event) {
+        
+            $('.note_list_item_js').removeClass('.note_list_item_js');
+        
+    }
    
     
 	
