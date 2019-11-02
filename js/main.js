@@ -90,7 +90,7 @@ $(document).ready(function () {
 			addClassForInpFld[0].className = 'ui list note_list_item_field note_list_item_field_js';
 			/*creatNewClassForFieldNote = "ui list note_list_item_field note_list_item_field_js";*/
 			/*creatNewClassForFieldNote = "0";*/
-			console.log(creatNewClassForFieldNote);
+			
 			
 			
 			
