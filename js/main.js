@@ -88,6 +88,7 @@ $(document).ready(function () {
 			which_elem_user_click.className = "note_list_item note_list_item_js";
 			let addClassForInpFld = $('.note_list_item_js').closest('div').next('.note_list_item_field');
 			addClassForInpFld[0].className = 'ui list note_list_item_field note_list_item_field_js';
+            
 			/*creatNewClassForFieldNote = "ui list note_list_item_field note_list_item_field_js";*/
 			/*creatNewClassForFieldNote = "0";*/
 			
@@ -142,6 +143,10 @@ $(document).ready(function () {
             if (event.target.className != "ui list note_list_item_field note_list_item_field_js" && event.target.className != "note_list_item note_list_item_js") {
 				$('.note_list_item_field').removeClass('note_list_item_field_js');
 			}
+        /*if (event.target.className != "note_list_item_js") {
+				$('.note_list_item').removeClass('note_list_item_js');
+				
+			}*/
         
     }
  /*=================================================================================*/  
