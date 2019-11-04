@@ -80,15 +80,22 @@ $(document).ready(function () {
 		let which_elem_user_click = event.target;
 		
 		
+		if (which_elem_user_click.className == "ui button clear") {
+			
+			
+			let first_close = which_elem_user_click.parentElement('field');
+			
+			console.log(first_close);
+			};
 		
 		
 		
-		
-		if (which_elem_user_click.tagName == "INPUT") {
+		if (which_elem_user_click.className == "note_list_item") {
 			which_elem_user_click.className = "note_list_item note_list_item_js";
 			let addClassForInpFld = $('.note_list_item_js').closest('div').next('.note_list_item_field');
+			
 			addClassForInpFld[0].className = 'ui list note_list_item_field note_list_item_field_js';
-            
+            console.log(addClassForInpFld);
 			/*creatNewClassForFieldNote = "ui list note_list_item_field note_list_item_field_js";*/
 			/*creatNewClassForFieldNote = "0";*/
 			
@@ -110,9 +117,20 @@ $(document).ready(function () {
 		
 		
 		
-		$('.clear').click(function () {
+		/*$('.clear').click(function () {
 			$('.note_list_item_field_js').empty();
-		});
+		});*/
+		
+		
+		
+	
+		/*if (which_elem_user_click.tagName == "BUTTON") {
+			which_elem_user_click.closest('button_group').prev('.note_list_item_field').empty();
+			let bb = which_elem_user_click.closest('button_group');
+			console.log(bb);
+			};*/
+		
+	
 	};
     
 	
