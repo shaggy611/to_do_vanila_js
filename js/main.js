@@ -46,34 +46,8 @@ $(document).ready(function () {
 	$('.clear').click(function(){
 		$('.note_list_item_field_js').empty();
 	});*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-    
-    
-    
-    
     let addClickListenHere = document.querySelector('#addClickListenHere');
 	let note_list_item_listen = addClickListenHere.addEventListener('click', editCurrentElem);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	function editCurrentElem(event) {
@@ -81,39 +55,35 @@ $(document).ready(function () {
 		
 		
 		if (which_elem_user_click.className == "ui button clear") {
-			
-			
-			let first_close = which_elem_user_click.parentElement('field');
-			
-			console.log(first_close);
-			};
+	let first_close = which_elem_user_click.parentElement('field');
+	console.log(first_close);
+};
 		
 		
 		
 		if (which_elem_user_click.className == "note_list_item") {
 			which_elem_user_click.className = "note_list_item note_list_item_js";
 			let addClassForInpFld = $('.note_list_item_js').closest('div').next('.note_list_item_field');
-			
 			addClassForInpFld[0].className = 'ui list note_list_item_field note_list_item_field_js';
-            console.log(addClassForInpFld);
-			/*creatNewClassForFieldNote = "ui list note_list_item_field note_list_item_field_js";*/
-			/*creatNewClassForFieldNote = "0";*/
-			
-			
-			
-			
-			
-			
-			
-			$('.note_list_item_js').keypress(function (event) {
-			if (event.keyCode == 13) {
-				let note_list_item_js = $('.note_list_item_js').val();
-				$('.note_list_item_field_js').append('<div class="item checkbox"><input type="checkbox" tabindex="0"><label class="chbx_style">' + note_list_item_js + '</label></div>');
-				$('.note_list_item_js').val('');
-			};
-		});
+            console.log(addClassForInpFld);	
 		}
-		else return;
+		
+		/*$('.note_list_item_js').keypress(function (event) {
+				if (event.keyCode == 13) {
+
+					let note_list_item_js_1 = $('.note_list_item_js').val();
+
+					$('.note_list_item_field_js').append('<div class="item checkbox"><input type="checkbox" tabindex="0"><label class="chbx_style">' + note_list_item_js_1 + '</label></div>');
+					$('.note_list_item_js').val('');
+					
+					
+
+				}
+				
+		});*/
+		
+		
+		
 		
 		
 		
@@ -129,9 +99,35 @@ $(document).ready(function () {
 			let bb = which_elem_user_click.closest('button_group');
 			console.log(bb);
 			};*/
-		
-	
 	};
+	
+	
+/*	document.addEventListener('keypress', sdfg);
+	function sdfg (event){
+		if ( event.which == 13 ) {
+		let note_list_item_js_1 = $('.note_list_item_js').val();
+
+					$('.note_list_item_field_js').append('<div class="item checkbox"><input type="checkbox" tabindex="0"><label class="chbx_style">' + note_list_item_js_1 + '</label></div>');
+					$('.note_list_item_js').val('');
+	}
+		else return;
+	}*/
+	
+	
+	$(document).keypress(function (event) {
+				if (event.keyCode == 13) {
+
+					let note_list_item_js_1 = $('.note_list_item_js').val();
+
+					$('.note_list_item_field_js').append('<div class="item checkbox"><input type="checkbox" tabindex="0"><label class="chbx_style">' + note_list_item_js_1 + '</label></div>');
+					$('.note_list_item_js').val('');
+					
+					
+
+				}
+				
+		});
+	
     
 	
 	
@@ -155,6 +151,7 @@ $(document).ready(function () {
     
     function remove_class_name_for_elem (event) {
             if (event.target.className != "note_list_item note_list_item_js") {
+				
 				$('.note_list_item').removeClass('note_list_item_js');
 				
 			}
