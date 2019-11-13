@@ -288,12 +288,30 @@ font-family: 'Quicksand', sans-serif;
 }
 
 .chbx_style{
-	margin-left: 3%;
-	font-size: 1.25rem;
+	margin-left: 5%;
+	font-size: 1.45rem;
+	display:inline-block;
+}
+
+.chbx {
+	margin-top: 0.7%;
+position: absolute;		
+}
+
+.checkbox {
+	margin-top: 2%;
 }
 
 .button_group {
+	margin-top: 5%;
 	text-align: center;
+}
+
+.button_group > .ui {
+	margin-bottom: 5%;
+	width: 30%;
+  align-items: center; 
+
 }
 
 .name_without_border {
@@ -357,3 +375,11 @@ input.note_list_item {
 	border: 0.4px solid !important;
 	color: lightgray !important;
 }
+.note_list_item_field {
+    
+}
+
+.inactive_text {
+	color: lightgray;
+}
+
