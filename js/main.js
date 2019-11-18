@@ -47,6 +47,8 @@ $(document).ready(function () {
 	
 	
 	
+	
+	
 	let CheckBoxActivated  = document.querySelector('.insert_new_note');
 	let checkBoxMakeNoteItemInactive = CheckBoxActivated.addEventListener('click', CBactivated);
 	function CBactivated(event) {
@@ -86,14 +88,7 @@ $(document).ready(function () {
 		
 		
 		
-		let save_btn = document.querySelector("#save_note");
-let local_storage_content = document.querySelector(".localStorage_start_here").innerHTML;
-save_btn.addEventListener("click", save_note_to_local_storage);
-	
-function save_note_to_local_storage() {
-	localStorage.setItem("local_storage_content", local_storage_content);
-	console.log(local_storage_content);
-}
+
 		
 		
 		
@@ -143,6 +138,13 @@ function save_note_to_local_storage() {
 			let bb = which_elem_user_click.closest('button_group');
 			console.log(bb);
 			};*/
+		
+		
+		
+				
+
+	save_note_to_local_storage();
+
 	};
 	
 	
@@ -233,7 +235,14 @@ const uuid = `f${(+new Date).toString(16)}`;
 	
 	
 
-
+function save_note_to_local_storage() {
+	let save_btn = document.querySelector("#save_note");
+let local_storage_content = document.querySelector(".localStorage_start_here").innerHTML;
+	localStorage.removeItem("local_storage_content");
+	localStorage.clear();
+	localStorage.setItem("local_storage_content", local_storage_content);
+	console.log(local_storage_content);
+};
 
 
 
