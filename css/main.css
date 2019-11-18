@@ -332,7 +332,6 @@ input.note_list_item {
 
 .col_padd_down {
 	padding-top: 2rem !important;
-
 }
 
 .notes_center {
@@ -367,7 +366,6 @@ input.note_list_item {
 }
 
 .input_width {
-	/*border: 1px solid red;*/
 	width: 100%;
 }
 
@@ -375,11 +373,14 @@ input.note_list_item {
 	border: 0.4px solid !important;
 	color: lightgray !important;
 }
-.note_list_item_field {
-    
-}
 
 .inactive_text {
 	color: lightgray;
 }
+
+.beautiful {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.9) !important;
+	transition: box-shadow 0.2s !important;
+}
+
 
