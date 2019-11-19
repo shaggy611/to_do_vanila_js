@@ -106,10 +106,7 @@ $(document).ready(function () {
 		
 		
 		
-/*		if (which_elem_user_click.className == "ui button clear") {
-	let first_close = which_elem_user_click.parentElement('field');
-	console.log(first_close);
-};*/
+
 		
 		
 		
@@ -117,33 +114,29 @@ $(document).ready(function () {
 			which_elem_user_click.className = "note_list_item note_list_item_js";
 			let addClassForInpFld = $('.note_list_item_js').closest('div').next('.note_list_item_field');
 			addClassForInpFld[0].className = 'ui list note_list_item_field note_list_item_field_js';
-            
 		}
-	
 		
 		
 		
 		
 		
 		
-		/*$('.clear').click(function () {
-			$('.note_list_item_field_js').empty();
-		});*/
+		
+		
+		if (event.target.className == "ui button clear_note") {
+			let note_list = which_elem_user_click.parentElement.parentElement.querySelector('.note_list_item_field');
+			note_list.innerHTML = "";
+		}
+		
+		if (event.target.className == "ui button delete_note") {
+			let note_list = which_elem_user_click.parentElement.parentElement.parentElement;
+			note_list.remove();
+			
+		}
 		
 		
 		
-	
-		/*if (which_elem_user_click.tagName == "BUTTON") {
-			which_elem_user_click.closest('button_group').prev('.note_list_item_field').empty();
-			let bb = which_elem_user_click.closest('button_group');
-			console.log(bb);
-			};*/
-		
-		
-		
-				
-
-	save_note_to_local_storage();
+		save_note_to_local_storage();
 
 	};
 	
@@ -236,13 +229,17 @@ const uuid = `f${(+new Date).toString(16)}`;
 	
 
 function save_note_to_local_storage() {
-	let save_btn = document.querySelector("#save_note");
+	let save_btn = document.querySelector(".save_note");
 let local_storage_content = document.querySelector(".localStorage_start_here").innerHTML;
 	localStorage.removeItem("local_storage_content");
 	localStorage.clear();
 	localStorage.setItem("local_storage_content", local_storage_content);
-	console.log(local_storage_content);
 };
+
+	
+
+
+
 
 
 
