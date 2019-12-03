@@ -2,7 +2,7 @@
 $(document).ready(function () {
 	/*============Function for loading of DATA from local storage==================================*/
 	loadAllNotes();
-
+    $('.note_list_item_main').removeClass('beautiful');
 	function loadAllNotes() {
 		let data = localStorage.getItem("local_storage_content");
 		if (data) {
@@ -52,12 +52,12 @@ $(document).ready(function () {
 	/*=========================================================================================*/
 	function editCurrentElem(event) {
 		let which_elem_user_click = event.target;
-		if (event.target.className == 'note_name name_without_border') {
-			event.target.placeholder = event.target.value;
-			event.target.onblur = function () {
+		
+			/*event.target.onblur = function () {
 				event.target.placeholder = event.target.value;
-			};
-		};
+			};*/
+		
+		
 		/*============================================================================================*/
 		/*========This little part make current note with shadow when user clicked on it/ ============*/
 		which_elem_user_click.closest('.note_list_item_main').className = 'ui raised segment note_list_item_main beautiful';
@@ -72,17 +72,19 @@ $(document).ready(function () {
 		if (event.target.className == "ui button clear_note") {
 			let note_list = which_elem_user_click.parentElement.parentElement.querySelector('.note_list_item_field');
 			note_list.innerHTML = "";
+			save_note_to_local_storage();
 		};
 		/*==========Delete current note===================================================================*/
 		if (event.target.className == "ui button delete_note") {
 			let note_list = which_elem_user_click.parentElement.parentElement.parentElement;
 			note_list.remove();
+			save_note_to_local_storage();
 		};
 		/*==========Save current note=====================================================================*/
 		if (event.target.className == "ui button save_note") {
+			let xx = event.target.parentNode.previousElementSibling.firstElementChild;
+			xx.placeholder = xx.value;
 			save_note_to_local_storage();
-			let note_name_save = document.querySelector('.name_without_border');
-			note_name_save.placeholder = note_name_save.value;
 		};
 /*This part of a code operate with classes of elements input note and items note. When EventListener detect that user click out of input note or item note, function remove name of classes by which JS collaborate with HTML tags*/
 		event.target.onblur = function () {
