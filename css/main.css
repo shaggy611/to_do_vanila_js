@@ -433,3 +433,41 @@ input.note_list_item {
   font-weight: 600;
   font-size: 14px;
 }
+
+.loading_wrapper {
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  overflow: hidden;
+  background-color: #ff9f64;
+  
+  z-index: 100;
+}
+
+#load {
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.ui {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.menu {
+  margin-top: 0 !important; 
+}
+
+.js_disable-scroll-onload {
+  overflow: hidden;
+}
+
+.hide-element {
+  display: none;
+}
+
+.show-element {
+  display: block;
+}

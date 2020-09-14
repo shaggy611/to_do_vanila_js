@@ -1,6 +1,8 @@
-'use strict';
+// 'use strict';
 $(document).ready(function () {
 	/*============Function for loading of DATA from local storage==================================*/
+	$("#dropdrop").dropdown();
+	
 	loadAllNotes();
     $('.note_list_item_main').removeClass('beautiful');
 	function loadAllNotes() {
@@ -152,7 +154,6 @@ $(document).ready(function () {
 
 		if (currentDate.getHours() < 10) {
 			minutes = "0" + currentDate.getMinutes();
-			console.log("yes");
 		}
 		else {minutes = currentDate.getMinutes()}
 
@@ -160,5 +161,11 @@ $(document).ready(function () {
 	}
 	/*=================================================================================*/
 
-	$(".animation_appear").transition('slide down');
+	function HideLoadSvg() {
+		$(".loading_wrapper").addClass("hide-element");
+		$(".js_disable-scroll-onload").removeClass("js_disable-scroll-onload");
+		$(".notes-wrapper").removeClass("hide-element");
+		$(".notes-wrapper").addClass("show-element");
+	}
+	setTimeout(HideLoadSvg, 500);
 });
