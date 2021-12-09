@@ -8,7 +8,12 @@ export class Notes extends Component {
 
     init() {
         let noteHTML = renderNote()
-        this.$el.insertAdjacentHTML('afterbegin', noteHTML)
-
+        let insertionPlace = this.$el.querySelector('.row')
+        insertionPlace.insertAdjacentHTML('afterbegin', renderNote())
+        insertionPlace.insertAdjacentHTML('afterbegin', renderNote())
+        insertionPlace.insertAdjacentHTML('afterbegin', renderNote())
+        insertionPlace.insertAdjacentHTML('afterbegin', renderNote())
+        insertionPlace.insertAdjacentHTML('afterbegin', renderNote())
+        insertionPlace.insertAdjacentHTML('afterbegin', renderNote())
     }
 }
