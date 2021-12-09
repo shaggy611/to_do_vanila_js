@@ -1,0 +1,38 @@
+{
+  "name": "todo-vanillajs-firebase",
+  "version": "1.0.0",
+  "description": "js, javascript, firebase, firebase auth",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaggy611/to_do_vanila_js.git"
+  },
+  "keywords": [
+    "js",
+    "javascript"
+  ],
+  "author": "Vsevolod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaggy611/to_do_vanila_js/issues"
+  },
+  "homepage": "https://github.com/shaggy611/to_do_vanila_js#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  }
+}

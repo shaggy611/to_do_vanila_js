@@ -1,0 +1,443 @@
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+.body_gradient {
+  background: #de6262; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #ffb88c,
+    #de6262
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Quicksand", sans-serif;
+}
+.dotted {
+  position: relative;
+  /*padding: 2.25em 1.6875em;*/
+  background-image: -webkit-repeating-radial-gradient(
+    center center,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 1px,
+    transparent 1px,
+    transparent 100%
+  );
+  background-image: repeating-radial-gradient(
+    center center,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 1px,
+    transparent 1px,
+    transparent 100%
+  );
+  background-size: 3px 3px;
+  height: 100vh;
+}
+
+.note_name {
+  text-align: center;
+  font-size: 1.5rem;
+  width: 100%;
+  font-weight: 700;
+}
+
+.chbx_style {
+  margin-left: 7%;
+  font-size: 1.2em;
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  margin-top: -1%;
+  line-height: 1.2rem;
+}
+
+.chbx {
+  /*margin-top: 2%;*/
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background: #ccc;
+  border: 1px solid #555;
+}
+
+.checkbox {
+  margin-top: 2%;
+}
+
+.button_group {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.button_group > .ui {
+  margin-bottom: 2%;
+  width: 30%;
+  align-items: center;
+}
+
+.name_without_border {
+  border: 0px solid;
+  color: rgb(87, 87, 87);
+}
+
+.name_without_border:focus {
+  border: 0px solid;
+  outline: none;
+}
+
+input.note_list_item {
+  width: 100% !important;
+}
+
+.col_pad_top {
+  padding-top: 2rem !important;
+}
+
+.notes_center {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.add_button {
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.insert_new_note {
+  color: rgb(87, 87, 87);
+}
+
+.add_new_note {
+  background-color: #de6262 !important;
+}
+
+.add_new_note:hover {
+  background-color: #c43535 !important;
+}
+
+.sign_up {
+  background-color: #ff9f64 !important;
+}
+
+.sign_up:hover {
+  background-color: #fa843b !important;
+}
+
+.input_width {
+  width: 100%;
+}
+
+.divider_own {
+  border-top: 1.6px solid !important;
+  border-bottom: none !important;
+  color: lightgray !important;
+  margin-top: 5px !important;
+}
+
+.inactive_text {
+  color: lightgray;
+}
+
+.beautiful {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9) !important;
+  transition: box-shadow 0.2s !important;
+}
+
+.delete_note {
+  width: 30px;
+  cursor: pointer;
+}
+
+.delete_note:hover {
+  color: #c43535 !important;
+}
+
+.fa-times:before {
+  z-index: -10;
+  font-size: 20px;
+}
+
+.time_of_create {
+  display: inline;
+  float: right;
+  margin-bottom: 20px;
+  color: rgb(87, 87, 87);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.loading_wrapper {
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  overflow: hidden;
+  background-color: #ff9f64;
+  
+  z-index: 100;
+}
+
+#load {
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.ui {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.menu {
+  margin-top: 0 !important; 
+}
+
+.js_disable-scroll-onload {
+  overflow: hidden;
+}
