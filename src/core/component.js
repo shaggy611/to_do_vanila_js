@@ -15,4 +15,5 @@ export class Component {
     show() {
         this.$el.classList.remove('hide')
     }
+
 }

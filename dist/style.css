@@ -2,8 +2,8 @@
   background: #de6262; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to left,
-    #ffb88c,
-    #de6262
+    #fcac7a,
+    #de6262c5
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: "Quicksand", sans-serif;
 }
@@ -29,7 +29,7 @@
 }
 
 .container-fluid {
-  max-width: 80% !important;
+  max-width: 90% !important;
   margin: auto;
 }
 
@@ -38,18 +38,86 @@
 }
 
 #notes {
-  
+  position: relative;
+  height: 90vh;
+  width: 100%;
 }
 
 .note {
   background: white;
   padding: 15px !important;
-  margin: 10px; 
+  margin: 10px;
   min-width: 400px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.507);
+  min-height: 200px;
+  height: auto;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.add-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.delete-note:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#create {
+  font-size: 25px;
+}
+
+.note-checkbox-input {
+    position:inherit !important;
+    opacity: 1 !important;
+    pointer-events: painted !important;
+    z-index: 100;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.note-list-item {
+  outline: none;
+}
+
+.note-name {
+  margin-top: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+[contentEditable=true]:empty:not(:focus):before {
+  content:attr(data-text);
+  color: rgba(185, 185, 185, 0.747)
+}
+
+.add-note-li {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  height: auto !important;
+}
+
+.note-textarea {
+  max-width: 370px;
+  min-width: 370px;
+  min-height: 70px;
+  outline: none;
+  -moz-appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.068);
+  padding: 5px;
+  margin-bottom: 10px;
 }

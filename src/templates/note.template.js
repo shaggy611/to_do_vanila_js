@@ -1,30 +1,24 @@
-export function renderNote() {
-
+export function renderNote(note, noteId, options = {local: true}) {
 
     return `
 
-            <div class="note">
+            <div class="note" id="${noteId}">
                 <div class="field">
 
-                    <div class="fas fa-times delete_note"></div>
+                    <div class="fas fa-times delete-note js-delete-note"></div>
                     <div class="time_of_create"></div>
-                    <input type="text" name="list_item" placeholder="Name of your note" class="note-name" autocomplete="off">
-
-
-                    <div class="divider"></div>
-
-
-                    <input type="text" name="list_item" placeholder="Add new list item" class="note_list_item" autocomplete="off">
-                    <div class="note-list-field"> </div>
-
+                    <div type="text" contenteditable="true" data-text="Enter name here" class="note-name"></div>
+                    <div name="note-text-item" data-text="Text here..." class="js-add-note-text note-textarea" contentEditable=true></div>
                 </div>
 
-
                 <div class="button_group">
-                    <button class="save_note">Save</button>
-                    <button class="clear_note">Clear</button>
+                <a class="waves-effect waves-light btn blue lighten-2 js-save-note">Save</a>
+                <a class="waves-effect waves-light btn deep-orange lighten-2 js-clear-note">Clear</a>
                 </div>
             </div>
 
     `
 }
+
+{/* <input type="text" name="list-item" placeholder="Add new list item" class="js-add-note-li add-note-li" autocomplete="off">
+                    <ul class="js-note-list-field"></ul> */}
