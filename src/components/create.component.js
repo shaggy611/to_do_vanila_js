@@ -17,7 +17,7 @@ export class CreateComponent extends Component {
 function buttonHandler(event) {
     if(event.target.classList.contains('js-add-new-note')) {
         const noteId = idGeneratorService.generator()
-        this.$el.previousElementSibling.insertAdjacentHTML('afterbegin', renderNote(noteId))
+        this.$el.previousElementSibling.insertAdjacentHTML('afterbegin', renderNote({}, noteId))
 
         new NoteItem(noteId)
     }

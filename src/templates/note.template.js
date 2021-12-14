@@ -1,14 +1,13 @@
-export function renderNote(note, noteId, options = {local: true}) {
+export function renderNote({name='', text='', id=''}, noteId) {
 
     return `
-
-            <div class="note" id="${noteId}">
+            <div class="note" id="${id || noteId}">
                 <div class="field">
 
                     <div class="fas fa-times delete-note js-delete-note"></div>
                     <div class="time_of_create"></div>
-                    <div type="text" contenteditable="true" data-text="Enter name here" class="note-name"></div>
-                    <div name="note-text-item" data-text="Text here..." class="js-add-note-text note-textarea" contentEditable=true></div>
+                    <div type="text" contenteditable="true" data-text="Enter name here" class="note-name">${name}</div>
+                    <div name="note-text-item" data-text="Text here..." class="js-add-note-text note-textarea" contenteditable=true>${text}</div>
                 </div>
 
                 <div class="button_group">
@@ -20,5 +19,5 @@ export function renderNote(note, noteId, options = {local: true}) {
     `
 }
 
-{/* <input type="text" name="list-item" placeholder="Add new list item" class="js-add-note-li add-note-li" autocomplete="off">
-                    <ul class="js-note-list-field"></ul> */}
+/* <input type="text" name="list-item" placeholder="Add new list item" class="js-add-note-li add-note-li" autocomplete="off">
+                    <ul class="js-note-list-field"></ul> */

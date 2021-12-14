@@ -10,11 +10,12 @@ export class Notes extends Component {
     }
 
     async init() {
-        let notesFromFB = await apiService.getNotes()
+        let notesFromFB = await apiService.getNotes() || {}
         const notes =  Transform.FBobjectToArray(notesFromFB)
 
         notes.map(note => {
             this.$el.querySelector('.row').insertAdjacentHTML('afterbegin', renderNote(note))
+            new NoteItem(note.id)
         })
 
         // this.$el.addEventListener('click', ButtonsHandler.bind(this))
