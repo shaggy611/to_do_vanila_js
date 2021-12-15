@@ -27,6 +27,31 @@ class ApiService {
             console.log(error)
         }
     }
+
+    async updateNote(note, idFirebase) {
+        try {
+            const request = new Request(`${this.url}/notes/${idFirebase}.json`, {
+                method: 'put',
+                body: JSON.stringify(note)
+            })
+
+            return useRequest(request)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async deleteNote(idFirebase) {
+        try {
+            const request = new Request(`${this.url}/notes/${idFirebase}.json`, {
+                method: 'delete'
+            })
+
+            return useRequest(request)
+        } catch(error) {
+            console.log(error)
+        }
+    }
 }
 
 async function useRequest(request) {

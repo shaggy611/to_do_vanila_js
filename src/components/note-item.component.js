@@ -4,9 +4,10 @@ import { apiService } from "../services/api.service"
 
 
 export class NoteItem extends Component {
-    constructor(id) {
+    constructor(id, noteIdFirebase) {
         super(id)
         this.id = id
+        this.noteIdFirebase = noteIdFirebase
 
     }
 
@@ -27,17 +28,26 @@ export class NoteItem extends Component {
 }
 
 
-function ButtonsHandler(event) {
+async function ButtonsHandler(event) {
     if(event.target.classList.contains('js-save-note')) {
-        let noteData = this.value()
-        apiService.createNote(noteData)
+        console.log(this.noteIdFirebase)
+        if(this.noteIdFirebase === undefined) {
+            let noteData = this.value()
+            await apiService.createNote(noteData)
+        } else {
+            let noteData = this.value()
+            console.log(this.noteIdFirebase)
+            await apiService.updateNote(noteData, this.noteIdFirebase)
+        }
+        
     }
 
     if(event.target.classList.contains('js-clear-note')) {
-        this.$el.querySelector('.js-note-list-field').innerHTML=""
+        this.$el.querySelector('.js-add-note-text').innerHTML=""
     }
 
     if(event.target.classList.contains('js-delete-note')) {
+        await apiService.deleteNote(this.noteIdFirebase)
         this.$el.remove()
     }
 

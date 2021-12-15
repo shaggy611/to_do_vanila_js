@@ -15,7 +15,8 @@ export class Notes extends Component {
 
         notes.map(note => {
             this.$el.querySelector('.row').insertAdjacentHTML('afterbegin', renderNote(note))
-            new NoteItem(note.id)
+            new NoteItem(note.id, note.idFirebase)
+            
         })
 
         // this.$el.addEventListener('click', ButtonsHandler.bind(this))
