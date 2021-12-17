@@ -4,8 +4,8 @@ export function renderNote({name='', text='', id=''}, noteId) {
             <div class="note" id="${id || noteId}">
                 <div class="field">
 
-                    <div class="fas fa-times delete-note js-delete-note"></div>
-                    <div class="time_of_create"></div>
+                    <span class="fas fa-times delete-note js-delete-note"></span>
+                    <div class="time_of_create">${moment().format('D/M/Y, HH:mm')}</div>
                     <div type="text" contenteditable="true" data-text="Enter name here" class="note-name">${name}</div>
                     <div name="note-text-item" data-text="Text here..." class="js-add-note-text note-textarea" contenteditable=true>${text}</div>
                 </div>

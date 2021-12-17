@@ -21,6 +21,7 @@ export class NoteItem extends Component {
         value.name = this.$el.querySelector('.note-name').textContent
         value.text = this.$el.querySelector('.js-add-note-text').textContent
         value.id = this.id
+        value.dateOfCreate = new Date()
 
         return value
     }
@@ -30,26 +31,18 @@ export class NoteItem extends Component {
 
 async function ButtonsHandler(event) {
     if(event.target.classList.contains('js-save-note')) {
-        console.log(this.noteIdFirebase)
-        if(this.noteIdFirebase === undefined) {
-            let noteData = this.value()
-            await apiService.createNote(noteData)
-        } else {
-            let noteData = this.value()
-            console.log(this.noteIdFirebase)
-            await apiService.updateNote(noteData, this.noteIdFirebase)
-        }
-        
+        let noteData = this.value()
+        await apiService.updateNote(noteData, this.id)
     }
 
     if(event.target.classList.contains('js-clear-note')) {
         this.$el.querySelector('.js-add-note-text').innerHTML=""
     }
-
+            
     if(event.target.classList.contains('js-delete-note')) {
-        await apiService.deleteNote(this.noteIdFirebase)
+        await apiService.deleteNote(this.id)
         this.$el.remove()
-    }
+    }       
 
     if(event.keyCode === 13 && event.target.classList.contains('js-add-note-li')) {
         this.$el.querySelector('.js-note-list-field').insertAdjacentHTML('afterbegin', liInsert())
