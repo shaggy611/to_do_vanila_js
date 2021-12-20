@@ -12,33 +12,11 @@ export class Notes extends Component {
     async init() {
         let notesFromFB = await apiService.getNotes() || {}
         const notes =  Transform.FBobjectToArray(notesFromFB)
-
         notes.map(note => {
-            this.$el.querySelector('.row').insertAdjacentHTML('afterbegin', renderNote(note))
-            new NoteItem(note.id, note.idFirebase)
+            this.$el.querySelector('.row').insertAdjacentHTML('afterbegin', renderNote(note, note.idFirebase))
+            new NoteItem(note.idFirebase)
             
         })
-
-        // this.$el.addEventListener('click', ButtonsHandler.bind(this))
-        // this.$el.addEventListener('keypress', ButtonsHandler.bind(this))
     }
 
 }
-
-// function ButtonsHandler(event) {
-//     if(event.target.classList.contains('js-save-note')) {
-        
-//     }
-
-//     if(event.target.classList.contains('js-clear-note')) {
-        
-//     }
-
-//     if(event.target.classList.contains('js-delete-note')) {
-//         event.target.closest('.note').remove()
-//     }
-
-//     if(event.target.key === 'Enter' && event.target.classList.contains('js-add-note-li')) {
-//         this.$el.querySelector('.js-note-list-field').insertAdjacentHTML('afterbegin', liInsert())
-//     }
-// }

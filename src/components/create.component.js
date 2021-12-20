@@ -1,7 +1,6 @@
 import { Component } from "../core/component"
 import { NoteItem } from "./note-item.component"
 import { renderNote } from "../templates/note.template"
-import { idGeneratorService } from "../services/id-generator.service"
 import { apiService } from "../services/api.service"
 
 export class CreateComponent extends Component {
@@ -17,17 +16,10 @@ export class CreateComponent extends Component {
 
 async function buttonHandler(event) {
     if(event.target.classList.contains('js-add-new-note')) {
-        // const noteId = idGeneratorService.generator()
-
-        let val = {name:"", text:"", id:""}
+        const val = {name:"", text:"", id:"", dateOfCreate: ""}
         let id = await apiService.createNote(val)
-        let noteId = id.name
-        console.log(noteId)
-        this.$el.previousElementSibling.insertAdjacentHTML('afterbegin', renderNote({}, noteId))
+        this.$el.previousElementSibling.insertAdjacentHTML('afterbegin', renderNote({}, id.name))
     
-        new NoteItem(noteId)
-
-        // let noteData = note.value()
-        // let response = await apiService.createNote(noteData)
+        new NoteItem(id.name)
     }
 }

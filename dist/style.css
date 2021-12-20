@@ -1,31 +1,20 @@
-.body_gradient {
-  background: #de6262; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #fcac7a,
-    #de6262c5
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: "Quicksand", sans-serif;
+/* Variables for setting color of all APP */
+:root {
+  --main-bg-color: #0081a7;
+  --header-bg-color: #ffd6a5;
+  --note-bg-color-0: #fff;
+  --note-bg-color-1: #caffbf;
+  --note-bg-color-2: #9bf6ff;
+  --note-bg-color-3: #ffadad;
+  --button-create-bg: #e76f51;
 }
-.dotted {
-  position: relative;
-  /*padding: 2.25em 1.6875em;*/
-  background-image: -webkit-repeating-radial-gradient(
-    center center,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2) 1px,
-    transparent 1px,
-    transparent 100%
-  );
-  background-image: repeating-radial-gradient(
-    center center,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2) 1px,
-    transparent 1px,
-    transparent 100%
-  );
-  background-size: 3px 3px;
-  height: 100vh;
+/* ====================================== */
+.hide-el {
+  display: none !important;
+}
+
+.body-bg {
+  background-color: var(--main-bg-color);
 }
 
 .container-fluid {
@@ -44,7 +33,7 @@
 }
 
 .note {
-  background: white;
+  background-color: var(--note-bg-color-0);
   padding: 15px !important;
   margin: 10px;
   min-width: 400px;
@@ -56,6 +45,7 @@
   box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.507);
   min-height: 200px;
   height: auto;
+  position: relative;
 }
 
 .row {
@@ -73,6 +63,9 @@
 .time_of_create {
   text-align: right;
   font-style: italic;
+  min-width: 50px;
+  min-height: 20px;
+  color: rgba(0, 0, 0, 0.473);
 }
 
 .delete-note {
@@ -86,13 +79,13 @@
 
 #create {
   font-size: 25px;
+  background-color: var(--button-create-bg) !important;
 }
 
 .note-checkbox-input {
     position:inherit !important;
     opacity: 1 !important;
     pointer-events: painted !important;
-    z-index: 100;
     cursor: pointer;
     margin-right: 7px;
 }
@@ -114,6 +107,7 @@
 
 [contentEditable=true]:empty:not(:focus):before {
   content:attr(data-text);
+  z-index: -100;
   color: rgba(185, 185, 185, 0.747)
 }
 
@@ -132,4 +126,62 @@
   border: 1px solid rgba(0, 0, 0, 0.068);
   padding: 5px;
   margin-bottom: 10px;
+  z-index: 100;
+}
+
+.button_group {
+  margin-left: auto;
+  width: 100px;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--button-create-bg);
+}
+
+.button_group > i {
+  cursor: pointer;
+}
+
+.palette {
+  position: absolute;
+  z-index: 100;
+  min-width: 150px;
+  min-height: 40px;
+  background: rgba(0, 0, 0, 0.233);
+  top: 90%;
+  left: 94%;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.palette > .note-collor {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.note-collor-blue {
+  background-color: var(--note-bg-color-2) !important;
+}
+
+.note-collor-orange {
+  background-color: var(--note-bg-color-3) !important;
+}
+
+.note-collor-green {
+  background-color: var(--note-bg-color-1) !important;
 }

@@ -9,11 +9,11 @@ export class Component {
     }
 
     hide() {
-        this.$el.classList.add('hide')
+        this.$el.classList.add('hide-el')
     }
 
     show() {
-        this.$el.classList.remove('hide')
+        this.$el.classList.remove('hide-el')
     }
 
 }
