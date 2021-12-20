@@ -1,7 +1,7 @@
-export function renderNote({name='', text='', id='', dateOfCreate=''}, noteId) {
+export function renderNote({name='', text='', id='', dateOfCreate='', noteColor}, noteId) {
 
     return `
-            <div class="note" id="${id || noteId}">
+            <div class="note" id="${id || noteId}" data-color="${noteColor}">
                 <div class="field">
 
                     <span class="fas fa-times delete-note js-delete-note"></span>

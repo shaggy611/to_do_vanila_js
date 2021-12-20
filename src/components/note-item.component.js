@@ -21,6 +21,7 @@ export class NoteItem extends Component {
         value.text = this.$el.querySelector('.js-add-note-text').textContent
         value.id = this.id
         value.dateOfCreate = this.dateOfCreate
+        value.noteColor = this.$el.dataset.color
         return value
     }
 }
@@ -47,20 +48,20 @@ async function ButtonsHandler(event) {
 
     if(event.target.classList.contains('js-palette')) {
         this.$el.querySelector('.palette').classList.remove('hide-el')
-    }
+    } else { this.$el.querySelector('.palette').classList.add('hide-el') }
 
     if(event.target.classList.contains('js-blue')) {
-        this.$el.classList.add('note-collor-blue')
+        this.$el.dataset.color = 'note-collor-blue'
         this.$el.querySelector('.palette').classList.add('hide-el')
     }
 
     if(event.target.classList.contains('js-green')) {
-        this.$el.classList.add('note-collor-green')
+        this.$el.dataset.color = 'note-collor-green'
         this.$el.querySelector('.palette').classList.add('hide-el')
     }
 
     if(event.target.classList.contains('js-orange')) {
-        this.$el.classList.add('note-collor-orange')
+        this.$el.dataset.color = 'note-collor-orange'
         this.$el.querySelector('.palette').classList.add('hide-el')
     }
 }

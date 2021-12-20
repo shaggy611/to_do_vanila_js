@@ -147,7 +147,7 @@
   z-index: 100;
   min-width: 150px;
   min-height: 40px;
-  background: rgba(0, 0, 0, 0.233);
+  background: rgba(0, 0, 0, 0.521);
   top: 90%;
   left: 94%;
   border-radius: 30px;
@@ -174,14 +174,14 @@
   cursor: pointer;
 }
 
-.note-collor-blue {
+.note-collor-blue, .note[data-color='note-collor-blue'] {
   background-color: var(--note-bg-color-2) !important;
 }
 
-.note-collor-orange {
+.note-collor-orange, .note[data-color='note-collor-orange'] {
   background-color: var(--note-bg-color-3) !important;
 }
 
-.note-collor-green {
+.note-collor-green, .note[data-color='note-collor-green'] {
   background-color: var(--note-bg-color-1) !important;
 }
