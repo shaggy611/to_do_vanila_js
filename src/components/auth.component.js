@@ -18,13 +18,19 @@ export class Auth extends Component {
 function buttonHandler() {
     this.$el.closest('div').nextElementSibling.insertAdjacentHTML('afterbegin', this.loginComponent)
     let form = this.$el.closest('div').nextElementSibling.querySelector('.login-form')
-    console.log(form)
+    this.$el.closest('div').nextElementSibling.querySelector('.login-form-wrapper').addEventListener('click', function(event) {
+        if(event.target.classList.contains('delete-login-form')) {
+            this.$el.closest('div').nextElementSibling.querySelector('.login-form-wrapper').remove()
+        }
+    }.bind(this))
     form.addEventListener('submit', submitHandler.bind(this))
     this.loginForm = new LoginForm(form, {emailField:'emailField', passwordField:'passwordField'})
 }
 
-function submitHandler(event) {
+async function submitHandler(event) {
     event.preventDefault()
 
-    console.log(this.loginForm.value())
+    let authData = this.loginForm.value()
+    let userID = await this.loginForm.authWithEmailAndPassword(authData)
+    console.log(userID)
 }
