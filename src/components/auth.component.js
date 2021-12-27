@@ -1,7 +1,8 @@
 import { Component } from "../core/component"
 import { renderAuthForm } from "../templates/auth.template"
 import { LoginForm } from "../core/login-form"
-
+import { Notes } from "./notes.component";
+import { CreateComponent } from "./create.component";
 
 export class Auth extends Component {
     constructor(id) {
@@ -31,6 +32,9 @@ async function submitHandler(event) {
     event.preventDefault()
 
     let authData = this.loginForm.value()
-    let userID = await this.loginForm.authWithEmailAndPassword(authData)
-    console.log(userID)
+    const token = await this.loginForm.authWithEmailAndPassword(authData)
+    this.$el.closest('div').nextElementSibling.querySelector('.login-form-wrapper').remove()
+
+    new Notes('notes', token)
+    new CreateComponent('create')
 }

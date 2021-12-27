@@ -3,9 +3,9 @@ class ApiService {
         this.url = baseUrl
     }
 
-    async getNotes() {
+    async getNotes(token) {
         try {
-            const request = new Request(this.url + '/notes.json', {
+            const request = new Request(this.url + `/notes.json?auth=${token}`, {
                 method: 'get',
             })
 

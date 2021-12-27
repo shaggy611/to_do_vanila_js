@@ -1,5 +1,5 @@
-import { Notes } from "./components/notes.component";
-import { CreateComponent } from "./components/create.component";
+// import { Notes } from "./components/notes.component";
+// import { CreateComponent } from "./components/create.component";
 import { Auth } from "./components/auth.component";
 import { initializeApp } from "firebase/app";
 
@@ -18,5 +18,5 @@ const firebaseConfig = {
 
 
 new Auth('login')
-new CreateComponent('create')
-new Notes('notes')
+// new CreateComponent('create')
+// new Notes('notes')
