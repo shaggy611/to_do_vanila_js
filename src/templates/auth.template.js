@@ -1,6 +1,6 @@
 export function renderAuthForm() {
     return `
-        <div class="login-form-wrapper">
+        <div class="login-form-wrapper" id="login-form">
         <span class="fas fa-times delete-login-form"></span>
         <form class="login-form">
 
