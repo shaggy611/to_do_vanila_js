@@ -1,7 +1,6 @@
 export class Component {
-    constructor(id, token) {
+    constructor(id) {
         this.$el = document.getElementById(id)
-        this.token = token
         this.init()
     }
 

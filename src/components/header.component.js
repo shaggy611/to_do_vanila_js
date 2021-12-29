@@ -14,6 +14,7 @@ export class HeaderComponent extends Component {
 
 function buttonHandler(event) {
     if(event.target.classList.contains('js-login-form-open')) {
+        document.querySelector('.js-login-backlit').classList.remove('hide-el')
         document.querySelector('#app').insertAdjacentHTML('afterbegin', renderAuthForm())
         new Auth('login-form')
     }

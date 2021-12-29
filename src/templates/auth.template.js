@@ -12,6 +12,8 @@ export function renderAuthForm() {
             <input type="password" class="form-control" id="pass" name="passwordField">
 
         <button type="submit" class="btn btn-primary submit-login js-submit-login">Log in</button>
+
+        <div class="js-create-account create-account">Create account</div>
         </form>
         </div>
     `

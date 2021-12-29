@@ -5,13 +5,13 @@ import { Transform } from "../services/transform.service";
 import { renderNote } from "../templates/note.template";
 
 export class Notes extends Component {
-    constructor(id, token) {
-        super(id, token)
+    constructor(id) {
+        super(id)
 
     }
 
     async init() {
-        let notesFromFB = await apiService.getNotes(this.token) || {}
+        let notesFromFB = await apiService.getNotes() || {}
         const notes =  Transform.FBobjectToArray(notesFromFB)
         notes.map(note => {
             this.$el.querySelector('.row').insertAdjacentHTML('afterbegin', renderNote(note, note.idFirebase))

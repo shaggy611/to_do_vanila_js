@@ -33,10 +33,63 @@
   padding-right: 20px;
 }
 
+.not-logined {
+  font-size: 27px;
+  text-align: center;
+  color: #1d3557;
+  margin-top: 150px;
+}
+
+.logo-block {
+    font-size: 30px;
+    color: #e76f51;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    width: 13ch;
+    font-family: monospace;
+    font-size: 30px;
+    white-space: nowrap;
+    /*непереноситьтекстнадругуюстроку*/overflow: hidden;
+    /*скрываемпереполнениеконтентом*/border-right: 3px solid transparent;
+    /*рисуемкурсор*/animation: cursor 0.75s step-end infinite, printed_text 1.5s steps(13);
+    -webkit-animation: cursor 0.75s step-end infinite,;
+}
+
 .logo {
   font-size: 45px;
   color: #e76f51;
+  margin-right: 10px;
 }
+
+@keyframes printed_text {
+  from{
+      width: 0;
+  }
+
+  to {
+    width: 13ch;
+    border-right: 3px solid transparent;
+  }
+}
+
+@keyframes cursor {
+  0%{
+      border-color: #e76f51;
+  }
+
+  50%{
+      border-color: transparent;
+  }
+
+  90%{
+      border-color: #e76f51;
+  }
+
+  100%{
+    border-color: transparent;
+}
+}  
 
 #login {
   background: #e76f51;
@@ -58,7 +111,8 @@
   left:0;
   right:0;
   z-index: 1000;
-  padding-top: 140px;
+  padding-top: 100px;
+  padding-bottom: 120px;
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 10px;
@@ -68,8 +122,20 @@
   -o-border-radius: 10px;
 }
 
+.create-account {
+  font-size: 18px;
+  color: #e76f51;
+  margin-top: 20px;
+}
+
+.create-account:hover {
+  color: #e04b26;
+  cursor: pointer;
+}
+
 .submit-login {
   background: #e76f51;
+  margin-top: 20px;
 }
 
 .submit-login:hover {
@@ -80,6 +146,14 @@
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+.login-backlit {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.555);
 }
 
 #notes {

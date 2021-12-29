@@ -1,11 +1,13 @@
+import { CookieEdit } from "./cookie.service"
+
 class ApiService {
     constructor(baseUrl) {
         this.url = baseUrl
     }
 
-    async getNotes(token) {
+    async getNotes() {
         try {
-            const request = new Request(this.url + `/notes.json?auth=${token}`, {
+            const request = new Request(this.url + `/notes/${CookieEdit.getCookie('userId')}.json?auth=${CookieEdit.getCookie('tokenAccess')}`, {
                 method: 'get',
             })
 
@@ -17,7 +19,7 @@ class ApiService {
 
     async createNote(note) {
         try {
-            const request = new Request(this.url + '/notes.json', {
+            const request = new Request(this.url + `/notes/${CookieEdit.getCookie('userId')}.json?auth=${CookieEdit.getCookie('tokenAccess')}`, {
                 method: 'post',
                 body: JSON.stringify(note)
             })
@@ -30,7 +32,7 @@ class ApiService {
 
     async updateNote(note, idFirebase) {
         try {
-            const request = new Request(`${this.url}/notes/${idFirebase}.json`, {
+            const request = new Request(`${this.url}/notes/${CookieEdit.getCookie('userId')}/${idFirebase}.json?auth=${CookieEdit.getCookie('tokenAccess')}`, {
                 method: 'put',
                 body: JSON.stringify(note)
             })
@@ -43,7 +45,7 @@ class ApiService {
 
     async deleteNote(idFirebase) {
         try {
-            const request = new Request(`${this.url}/notes/${idFirebase}.json`, {
+            const request = new Request(`${this.url}/notes/${CookieEdit.getCookie('userId')}/${idFirebase}.json?auth=${CookieEdit.getCookie('tokenAccess')}`, {
                 method: 'delete'
             })
 
