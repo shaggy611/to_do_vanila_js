@@ -8,6 +8,8 @@ new HeaderComponent('header')
 
     const cookieToken = CookieEdit.getCookie('tokenAccess')
     if(cookieToken && cookieToken !== undefined) {
+        document.querySelector('.js-login-form-open').textContent = 'Sign out'
+        document.querySelector('.js-login-form-open').dataset.loginned = true
         new CreateComponent('create')
         new Notes('notes')
     } else if(!cookieToken) {

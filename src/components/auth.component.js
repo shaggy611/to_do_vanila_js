@@ -48,6 +48,8 @@ async function submitHandler(event) {
                 this.$el.remove(),
                 document.querySelector('.js-login-backlit').classList.add('hide-el'),
                 document.querySelector('.js-not-logined').remove(),
+                document.querySelector('.js-login-form-open').textContent = 'Sign out',
+                document.querySelector('.js-login-form-open').dataset.loginned = true,
                 new Notes('notes'),
                 new CreateComponent('create')
             )
